@@ -1,189 +1,49 @@
-// Toggle do menu do usuário (ícone no canto superior direito)
-document.addEventListener("DOMContentLoaded", function () {
-  const userIcon = document.getElementById("user-icon");
-  const userMenu = document.getElementById("user-menu");
+const carousel = document.querySelector('.planos-carousel');
+  const cards = Array.from(carousel.children);
+  const originalCount = cards.length;
+  const dotsContainer = document.querySelector('.dots');
 
-  userIcon.addEventListener("click", () => {
-    userMenu.classList.toggle("hidden");
-  });
-
-  // Fecha o menu ao clicar fora dele
-  document.addEventListener("click", function (event) {
-    if (!userIcon.contains(event.target) && !userMenu.contains(event.target)) {
-      userMenu.classList.add("hidden");
-    }
-  });
-});
-
-//Header Buttons
-const menuBtn = document.getElementById("menu-btn");
-const userBtn = document.getElementById("user-btn");
-const barsMenu = document.getElementById("bars-menu");
-const userMenu = document.getElementById("user-menu");
-
-menuBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  const isBarsVisible = !barsMenu.classList.contains("bars-hidden");
-
-  barsMenu.classList.toggle("bars-hidden", isBarsVisible);
-  userMenu.classList.add("user-hidden");
-});
-
-userBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  const isUserVisible = !userMenu.classList.contains("user-hidden");
-
-  userMenu.classList.toggle("user-hidden", isUserVisible);
-  barsMenu.classList.add("bars-hidden");
-});
-
-// Optional: hide menus if clicking outside
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".menu-icons")) {
-    barsMenu.classList.add("bars-hidden");
-    userMenu.classList.add("user-hidden");
-  }
-});
-
-// Carousel
-const track = document.querySelector(".carousel-track");
-const dots = document.querySelectorAll(".carousel-dots .dot");
-const images = document.querySelectorAll(".carousel-track img");
-let currentIndex = 0;
-let startX = 0;
-let currentTranslate = 0;
-let autoplayInterval;
-
-// Mover para imagem
-function goToSlide(index) {
-  if (index < 0) index = images.length - 1;
-  if (index >= images.length) index = 0;
-  currentIndex = index;
-  currentTranslate = -index * 100;
-  track.style.transform = `translateX(${currentTranslate}%)`;
-
-  dots.forEach((dot) => dot.classList.remove("active"));
-  dots[index].classList.add("active");
-}
-
-// Autoplay
-function startAutoplay() {
-  autoplayInterval = setInterval(() => {
-    goToSlide(currentIndex + 1);
-  }, 3000);
-}
-
-function stopAutoplay() {
-  clearInterval(autoplayInterval);
-}
-
-startAutoplay();
-
-// Swipe – touch
-track.addEventListener("touchstart", (e) => {
-  stopAutoplay();
-  startX = e.touches[0].clientX;
-});
-
-track.addEventListener("touchend", (e) => {
-  const endX = e.changedTouches[0].clientX;
-  const deltaX = endX - startX;
-
-  if (deltaX > 50) {
-    goToSlide(currentIndex - 1);
-  } else if (deltaX < -50) {
-    goToSlide(currentIndex + 1);
-  }
-
-  startAutoplay();
-});
-
-// Dots
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    goToSlide(index);
-    stopAutoplay();
-    startAutoplay();
-  });
-});
-
-// Old Collapsible
-// document.querySelectorAll('.collapsible').forEach(button => {
-//   button.addEventListener('click', () => {
-//     const content = button.nextElementSibling;
-//     button.classList.toggle('active');
-
-//     if (content.style.maxHeight) {
-//       content.style.maxHeight = null;
-//     } else {
-//       content.style.maxHeight = content.scrollHeight + 'px';
-//     }
-//   });
-// });
-
-document.addEventListener("DOMContentLoaded", function () {
-  const steps = document.querySelectorAll(".step");
-
-  steps.forEach((step) => {
-    step.addEventListener("click", function () {
-      const isActive = this.classList.contains("active");
-
-      // Fecha todos os outros
-      steps.forEach((s) => {
-        s.classList.remove("active");
-        const content = s.querySelector(".content");
-        if (content) content.style.maxHeight = null;
-        if (content) {
-          content.style.maxHeight = null;
-          content.style.marginBottom = null;
-        }
-      });
-
-      // Abre somente se o clicado não estava ativo
-      if (!isActive) {
-        this.classList.add("active");
-        const content = this.querySelector(".content");
-        if (content) {
-          content.style.maxHeight = content.scrollHeight + "px";
-          content.style.marginBottom = "20px";
-        }
-      }
+  // 🔁 Clone the cards to simulate infinity
+  for (let i = 0; i < 3; i++) {
+    cards.forEach(card => {
+      const clone = card.cloneNode(true);
+      carousel.appendChild(clone);
     });
+  }
+
+  // 🎯 Setup dots
+  function updateDots(index) {
+    const dotIndex = index % originalCount;
+    document.querySelectorAll('.dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === dotIndex);
+    });
+  }
+
+  // 📌 Ensure start from real content, not clone
+  carousel.scrollLeft = 0;
+  updateDots(0);
+
+  // 🧠 Scroll detection and snapping
+  let debounce;
+  carousel.addEventListener('scroll', () => {
+    clearTimeout(debounce);
+    debounce = setTimeout(() => {
+      const index = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+      updateDots(index);
+      
+      // Loop logic
+      if (index >= cards.length + originalCount - 1) {
+        // Reset to beginning of real cards
+        carousel.scrollLeft = 0;
+      }
+    }, 100);
   });
-});
 
-const cards = document.querySelectorAll(".aplicacao-card");
-const iframe = document.querySelector(".video-wrapper iframe");
-
-cards.forEach((card) => {
-  const icon = card.querySelector(".toggle-icon");
-  const span = card.querySelector("span");
-
-  // Initial setup
-  card.classList.contains("active")
-    ? icon.classList.add("fa-minus")
-    : icon.classList.add("fa-plus");
-
-  card.addEventListener("click", () => {
-    const isOpen = card.classList.contains("active");
-
-    if (isOpen) {
-      card.classList.remove("active");
-      icon.classList.remove("fa-minus");
-      icon.classList.add("fa-plus");
-    } else {
-      cards.forEach((c) => {
-        c.classList.remove("active");
-        c.querySelector(".toggle-icon").classList.remove("fa-minus");
-        c.querySelector(".toggle-icon").classList.add("fa-plus");
-      });
-
-      card.classList.add("active");
-      icon.classList.remove("fa-plus");
-      icon.classList.add("fa-minus");
-
-      const videoUrl = card.getAttribute("data-video");
-      iframe.src = videoUrl;
-    }
-  });
-});
+  // 🔄 Optional autoplay
+  setInterval(() => {
+    let index = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+    carousel.scrollTo({
+      left: (index + 1) * carousel.offsetWidth,
+      behavior: 'smooth'
+    });
+  }, 5000);
