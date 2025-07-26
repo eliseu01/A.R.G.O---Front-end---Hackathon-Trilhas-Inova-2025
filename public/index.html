@@ -22,27 +22,47 @@
     <div class="background-overlay"></div>
     <!-- Header -->
     <header class="top-bar">
-      <span class="logo">A.R.G.O</span>
+      <span class="logo">
+        <a href="#">A.R.G.O</a>
+      </span>
       <nav class="menu-icons">
         <button id="menu-btn">
           <i class="fa-solid fa-bars"></i>
         </button>
+        <div id="bars-menu" class="bars-menu bars-hidden">
+          <ul>
+            <li><a href="#">Planos</a></li>
+            <li class="last"><a href="#">Fale Conosco</a></li>
+          </ul>
+        </div>
         <button id="user-btn">
           <i class="fa-regular fa-circle-user"></i>
         </button>
-        <div id="user-menu" class="user-menu hidden">
+        <div id="user-menu" class="user-menu user-hidden">
           <ul>
-            <li><a href="#">Meus Planos</a></li>
             <li><a href="#">Editar Dados</a></li>
-            <li><a href="#">Sair</a></li>
+            <li><a href="#">Meus Planos</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li class="last"><a href="#">Sair</a></li>
           </ul>
         </div>
       </nav>
     </header>
 
-    <!-- Hero com imagem -->
+    <!-- Hero com carrossel -->
     <section class="hero">
-      <img src="drone.jpg" alt="Drone em ação" />
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="./assets/carousel1.png" alt="Imagem 1" />
+          <img src="./assets/carousel2.png" alt="Imagem 2" />
+          <img src="./assets/carousel3.png" alt="Imagem 3" />
+        </div>
+        <div class="carousel-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
     </section>
 
     <!-- Quem somos -->
@@ -96,47 +116,66 @@
           </button>
           <div class="content">
             <p>
-              Definição da rota, equipe e equipamentos necessários para a
-              coleta.
+              A equipe técnica (ou a própria plataforma, de forma automatizada)
+              define rotas, sensores ideais e parâmetros de coleta com base nos
+              dados fornecidos. Isso inclui seleção de tipo de inspeção,
+              altitude de voo e tipo de análise desejada.
             </p>
           </div>
         </div>
         <div class="step">
           <button class="collapsible">
             <span class="step-number">3</span>
-            Execução da Coleta
+            Execução da Coleta(Enxame de drones/eVTOL)
           </button>
           <div class="content">
-            <p>Coleta realizada por drones, satélites ou sensores em campo.</p>
+            <p>
+              Veículos aéreos autônomos são despachados para o local. Os drones
+              ou eVTOLs operam em enxame coordenado para realizar inspeções
+              ambientais, técnicas ou urbanas com sensores multiespectrais,
+              LIDAR, câmeras térmicas e mais.
+            </p>
           </div>
         </div>
         <div class="step">
           <button class="collapsible">
             <span class="step-number">4</span>
-            Processamento dos Dados
+            Processamento Inteligente dos Dados
           </button>
           <div class="content">
-            <p>Transformação das imagens e informações em dados úteis.</p>
+            <p>
+              Após a coleta, os dados são enviados automaticamente para o
+              servidor. Algoritmos de inteligência artificial processam as
+              informações, gerando mapas interativos, indicadores técnicos e
+              visualizações em dashboards personalizados.
+            </p>
           </div>
         </div>
         <div class="step">
           <button class="collapsible">
             <span class="step-number">5</span>
-            Acesso ao Dashboard
+            Acesso ao Dashboard Interativo
           </button>
           <div class="content">
             <p>
-              Cliente acessa visualmente os dados por meio do painel online.
+              Órgãos públicos, comunidades e parceiros acessam relatórios
+              visuais e técnicos diretamente pela plataforma, com insights
+              práticos e linguagem acessível — tudo em tempo real ou sob
+              demanda.
             </p>
           </div>
         </div>
         <div class="step">
           <button class="collapsible">
             <span class="step-number">6</span>
-            Ações com Evidência
+            Ações Baseadas em Evidência
           </button>
           <div class="content">
-            <p>Cliente toma decisões operacionais com base nos dados.</p>
+            <p>
+              Com base nos dados processados, as equipes gestoras tomam decisões
+              estratégicas mais eficientes, priorizando intervenções em áreas
+              críticas ou oportunidades de melhoria.
+            </p>
           </div>
         </div>
         <div class="step">
@@ -146,17 +185,23 @@
           </button>
           <div class="content">
             <p>
-              Revisão e ajustes contínuos nas missões com base nos resultados.
+              O sistema absorve os resultados das ações e propõe novas rotas,
+              ajustes operacionais ou missões futuras, garantindo evolução
+              contínua do território monitorado.
             </p>
           </div>
         </div>
         <div class="step">
           <button class="collapsible">
             <span class="step-number">8</span>
-            Histórico de Dados
+            Histórico de Dados e Comparativos
           </button>
           <div class="content">
-            <p>Armazenamento e comparação dos dados ao longo do tempo.</p>
+            <p>
+              Todo o histórico de coletas e análises permanece acessível,
+              permitindo comparações temporais, evolução das regiões mapeadas e
+              geração de relatórios longitudinalmente.
+            </p>
           </div>
         </div>
       </div>
@@ -186,11 +231,14 @@
       >
         <div class="card-header">
           <i class="toggle-icon fa-solid fa-plus"></i>
-          <p>Monitoramento de plantações com drone</p>
+          <p>
+            Monitoramento com drones para identificar alagamentos em tempo real
+            e acionar contenção preventiva.
+          </p>
         </div>
         <span>
           <i class="fa-regular fa-circle-user"></i>
-          João Silva
+          Orgãos Públicos
         </span>
       </div>
 
@@ -200,11 +248,14 @@
       >
         <div class="card-header">
           <i class="toggle-icon fa-solid fa-plus"></i>
-          <p>Inspeção de linhas de transmissão</p>
+          <p>
+            Patrulhamento com câmeras multiespectrais que detectam descarte
+            irregular e alertam autoridades com localização precisa.
+          </p>
         </div>
         <span>
           <i class="fa-regular fa-circle-user"></i>
-          Maria Souza
+          Orgãos Públicos
         </span>
       </div>
 
@@ -214,11 +265,14 @@
       >
         <div class="card-header">
           <i class="toggle-icon fa-solid fa-plus"></i>
-          <p>Acompanhamento de obras civis</p>
+          <p>
+            Drones com câmeras térmicas localizam vítimas à noite em áreas de
+            difícil acesso, agilizando o resgate.
+          </p>
         </div>
         <span>
           <i class="fa-regular fa-circle-user"></i>
-          Carlos Lima
+          Defesa Civil
         </span>
       </div>
     </section>

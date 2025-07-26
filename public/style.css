@@ -15,6 +15,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  text-align: justify;
 }
 
 .background-overlay {
@@ -47,10 +48,11 @@ span {
   border-bottom: 1px solid #222;
 }
 
-.logo {
+.logo a {
   font-size: 20px;
   font-weight: bold;
   color: #fff;
+  text-decoration: none;
 }
 
 .menu-icons {
@@ -85,34 +87,85 @@ span {
   height: 24px;
 }
 
+
+.bars-menu {
+  width: 50%;
+  position: absolute;
+  top: 60px;
+  right: 64px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  z-index: 10;
+}
+
+.bars-menu ul {
+  list-style: none;
+  text-align: center;
+}
+
+
+.bars-menu li a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+}
+
+.bars-menu li{
+  border-bottom: 1px solid #149191;
+  padding: 4px 0;
+}
+
+.bars-menu .last{
+  border-bottom: 0;
+}
+
+.bars-menu li:hover {
+  background-color: #0ff2;
+}
+
+.bars-hidden{
+  display: none;
+}
+
 .user-menu {
+  width: 50%;
   position: absolute;
   top: 60px;
   right: 16px;
-  background-color: #111;
-  border: 1px solid #fff;
-  border-radius: 8px;
-  padding: 8px 0;
+  background-color: #ffffff;
+  border-radius: 16px;
   z-index: 10;
 }
 
 .user-menu ul {
   list-style: none;
+  text-align: center;
 }
 
 .user-menu li a {
   display: block;
   padding: 10px 16px;
   text-decoration: none;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 14px;
 }
 
-.user-menu li a:hover {
+.user-menu li{
+  border-bottom: 1px solid #149191;
+  padding: 4px 0;
+}
+
+.user-menu .last{
+  border-bottom: 0;
+}
+
+.user-menu li:hover {
   background-color: #0ff2;
 }
 
-.hidden {
+.user-hidden {
   display: none;
 }
 
@@ -120,24 +173,47 @@ span {
 .hero {
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
-.hero img {
+.carousel {
+  position: relative;
   width: 100%;
   height: auto;
-  display: block;
 }
 
-.overlay-text {
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background-color: rgba(0, 255, 255, 0.7);
-  color: #000;
-  padding: 6px 10px;
-  border-radius: 4px;
-  font-size: 12px;
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  touch-action: pan-y;
 }
+
+.carousel-track img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carousel-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-dots .dot.active {
+  background-color: #333;
+}
+
 
 /* Text Sections */
 .text-section {

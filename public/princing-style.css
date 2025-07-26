@@ -1,0 +1,82 @@
+.planos {
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.planos-title {
+  font-family: 'Iceberg', cursive;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.planos-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  gap: 12px;
+}
+
+.plano-card {
+  min-width: 80%;
+  flex-shrink: 0;
+  background: linear-gradient(#e0f7fa, #b2ebf2);
+  color: #000;
+  border-radius: 12px;
+  padding: 20px;
+  scroll-snap-align: center;
+  box-shadow: 0 0 8px #0006;
+}
+
+.plano-card h3 {
+  font-family: 'Iceberg', cursive;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.descricao, .preco, .duracao {
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 8px;
+}
+
+.beneficios {
+  list-style: none;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  margin-top: 12px;
+}
+
+.beneficios li {
+  margin-bottom: 6px;
+}
+
+.btn-contrate {
+  background-color: #00cccc;
+  color: #000;
+  border: none;
+  padding: 10px 16px;
+  margin-top: 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dots {
+  margin-top: 12px;
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  background-color: #fff4;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background-color: #0ff;
+}
