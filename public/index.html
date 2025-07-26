@@ -3,8 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/18ae8d5820.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Iceberg&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/18ae8d5820.js"
+      crossorigin="anonymous"
+    ></script>
     <title>A.R.G.O - Home</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -15,7 +25,7 @@
       <span class="logo">A.R.G.O</span>
       <nav class="menu-icons">
         <button id="menu-btn">
-            <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-bars"></i>
         </button>
         <button id="user-btn">
           <i class="fa-regular fa-circle-user"></i>
@@ -39,7 +49,11 @@
     <section class="text-section">
       <h2>Quem somos</h2>
       <p>
-        A ARGO é uma startup brasileira de tecnologia aplicada à geointeligência operacional. Desenvolvemos plataformas aéreas autônomas baseadas em drones e VTOLs de última geração, equipados com sensores ambientais, ópticos e térmicos, integrados a algoritmos proprietários e IA para análise territorial.
+        A ARGO é uma startup brasileira de tecnologia aplicada à geointeligência
+        operacional. Desenvolvemos plataformas aéreas autônomas baseadas em
+        drones e VTOLs de última geração, equipados com sensores ambientais,
+        ópticos e térmicos, integrados a algoritmos proprietários e IA para
+        análise territorial.
       </p>
     </section>
 
@@ -47,7 +61,9 @@
     <section class="text-section">
       <h2>O que fazemos</h2>
       <p>
-        Nossas soluções ampliam a capacidade de monitoramento urbano, ambiental e estrutural com eficiência. Inspecionamos riscos invisíveis, ilhas de calor e anomalias ambientais em tempo real.
+        Nossas soluções ampliam a capacidade de monitoramento urbano, ambiental
+        e estrutural com eficiência. Inspecionamos riscos invisíveis, ilhas de
+        calor e anomalias ambientais em tempo real.
       </p>
     </section>
 
@@ -55,55 +71,148 @@
     <section class="text-section">
       <h2>Nosso impacto</h2>
       <p>
-        Geramos modelos 3D dinâmicos e alertas inteligentes. Entregamos dados acionáveis para gestão pública, planejamento urbano, defesa civil e grandes obras de infraestrutura.
+        Geramos modelos 3D dinâmicos e alertas inteligentes. Entregamos dados
+        acionáveis para gestão pública, planejamento urbano, defesa civil e
+        grandes obras de infraestrutura.
       </p>
       <div class="impact-steps">
-        <div class="step">1 - Solicitação do Serviço</div>
-        <div class="step">2 - Planejamento da Missão</div>
-        <div class="step">3 - Execução da Coleta</div>
-        <div class="step">4 - Processamento dos Dados</div>
-        <div class="step">5 - Acesso ao Dashboard</div>
-        <div class="step">6 - Ações com Evidência</div>
-        <div class="step">7 - Feedback e Replanejamento</div>
-        <div class="step">8 - Histórico de Dados</div>
+        <div class="step active">
+          <button class="collapsible">1 - Solicitação do Serviço</button>
+          <div class="content" style="max-height: 203px; margin-bottom: 20px">
+            <p>
+              Prefeituras, empresas ou organizações acessam a plataforma e
+              solicitam o mapeamento inteligente, informando seus objetivos
+              específicos, localização da área-alvo e nível de urgência.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <button class="collapsible">2 - Planejamento da Missão</button>
+          <div class="content">
+            <p>
+              Definição da rota, equipe e equipamentos necessários para a
+              coleta.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <button class="collapsible">3 - Execução da Coleta</button>
+          <div class="content">
+            <p>Coleta realizada por drones, satélites ou sensores em campo.</p>
+          </div>
+        </div>
+        <div class="step">
+          <button class="collapsible">4 - Processamento dos Dados</button>
+          <div class="content">
+            <p>Transformação das imagens e informações em dados úteis.</p>
+          </div>
+        </div>
+        <div class="step">
+          <button class="collapsible">5 - Acesso ao Dashboard</button>
+          <div class="content">
+            <p>
+              Cliente acessa visualmente os dados por meio do painel online.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <button class="collapsible">6 - Ações com Evidência</button>
+          <div class="content">
+            <p>Cliente toma decisões operacionais com base nos dados.</p>
+          </div>
+        </div>
+        <div class="step">
+          <button class="collapsible">7 - Feedback e Replanejamento</button>
+          <div class="content">
+            <p>
+              Revisão e ajustes contínuos nas missões com base nos resultados.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <button class="collapsible">8 - Histórico de Dados</button>
+          <div class="content">
+            <p>Armazenamento e comparação dos dados ao longo do tempo.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Vídeo -->
     <section class="video-section">
-      <iframe
-        src="https://player.vimeo.com/video/76979871?h=7c3a8f8b96"
-        width="100%"
-        height="220"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+      <div class="video-wrapper">
+        <iframe
+          src="https://player.vimeo.com/video/76979871?h=7c3a8f8b96"
+          width="100%"
+          height="220"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
     </section>
 
     <!-- Aplicações práticas -->
     <section class="aplicacoes">
       <h2>Aplicações práticas</h2>
-      <div class="aplicacao-card">
-        <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-        <span>Nome do Usuário</span>
+
+      <div
+        class="aplicacao-card active"
+        data-video="https://player.vimeo.com/video/76979871?h=7c3a8f8b96"
+      >
+        <div class="card-header">
+          <i class="toggle-icon fa-solid fa-plus"></i>
+          <p>Monitoramento de plantações com drone</p>
+        </div>
+        <span>
+          <i class="fa-regular fa-circle-user"></i>
+          João Silva
+        </span>
       </div>
-      <div class="aplicacao-card">
-        <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-        <span>Nome do Usuário</span>
+
+      <div
+        class="aplicacao-card"
+        data-video="https://player.vimeo.com/video/12345678"
+      >
+        <div class="card-header">
+          <i class="toggle-icon fa-solid fa-plus"></i>
+          <p>Inspeção de linhas de transmissão</p>
+        </div>
+        <span>
+          <i class="fa-regular fa-circle-user"></i>
+          Maria Souza
+        </span>
+      </div>
+
+      <div
+        class="aplicacao-card"
+        data-video="https://player.vimeo.com/video/87654321"
+      >
+        <div class="card-header">
+          <i class="toggle-icon fa-solid fa-plus"></i>
+          <p>Acompanhamento de obras civis</p>
+        </div>
+        <span>
+          <i class="fa-regular fa-circle-user"></i>
+          Carlos Lima
+        </span>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-      <p>A.R.G.O</p>
+      <p class="footer-logo">A.R.G.O</p>
       <ul>
         <li>Sobre</li>
+        <li>Imprensa e Mídia</li>
         <li>Contato</li>
-        <li>Política de Privacidade</li>
-        <li>Cookies</li>
+        <li>Relação com Investidores</li>
       </ul>
-      <p>Copyright © 2025 A.R.G.O</p>
+      <p>Copyright © 2025 A.R.G.O All rights reserved.</p>
+      <ul>
+        <li>Política de Privacidade</li>
+        <li>Política de Cookies</li>
+      </ul>
     </footer>
 
     <script src="script.js"></script>
