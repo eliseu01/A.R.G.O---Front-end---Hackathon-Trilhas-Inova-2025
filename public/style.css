@@ -6,6 +6,7 @@
 }
 
 body {
+  background-color: #149191;
   font-family: "Inter", sans-serif;
   color: white;
   padding-bottom: 40px;
@@ -172,6 +173,9 @@ span {
 }
 
 .collapsible {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
   background-color: transparent;
   color: #ffffff;
   cursor: pointer;
@@ -184,6 +188,13 @@ span {
   font-family: "Iceberg", cursive;
   transition: background-color 0.3s ease;
 }
+
+.step-number{
+  margin-left: 8px;
+  font-weight: 800;
+  font-size: 30px;
+}
+
 
 .collapsible:hover {
   background-color: transparent;
@@ -268,8 +279,7 @@ span {
 }
 
 .aplicacao-card.active {
-  border-color: #0077ff;
-  background-color: #9cc2fa;
+  border-color: #4ea0ff;
 }
 
 .aplicacao-card span {
@@ -346,7 +356,7 @@ span {
 }
 
 .footer-logo {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-family: "Iceberg", cursive;
 }
 
